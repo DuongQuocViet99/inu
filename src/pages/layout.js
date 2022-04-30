@@ -1,7 +1,8 @@
-import { HStack } from "@chakra-ui/react";
+import { HStack, Spacer } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
 
 import DrawerS from "components/drawer";
+import New from "components/modal.new";
 
 export default function Layout() {
   return (
@@ -14,6 +15,8 @@ export default function Layout() {
         borderColor='adobe.2'
       >
         <DrawerS />
+        <Spacer />
+        <New />
       </HStack>
       <Outlet />
     </>
