@@ -15,7 +15,7 @@ export default function DrawerS() {
         isOpen={ isOpen }
         onClose={ onClose }
       >
-        <DrawerOverlay bg='rgba(230, 230, 230, 0.4)' />
+        <DrawerOverlay bg='rgba(89, 89, 89, 0.4)' />
         <DrawerContent
           h='xs'
           m={ 2 }
