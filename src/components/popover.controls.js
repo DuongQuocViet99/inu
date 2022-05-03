@@ -3,7 +3,7 @@ import { FiEdit2, FiX } from 'react-icons/fi';
 import { CgTrash } from 'react-icons/cg';
 
 import { IconButtonPopover, IconButtonPopoverItem } from 'components/iconbutton';
-import { DividerVertical } from 'components/divider';
+import { DividerVerticalControls } from 'components/divider';
 
 export default function PopoverControls() {
   return (
@@ -31,12 +31,12 @@ export default function PopoverControls() {
                     fontSize='17px'
                     icon={ <FiEdit2 /> }
                   />
-                  <DividerVertical />
+                  <DividerVerticalControls />
                   <IconButtonPopoverItem
                     fontSize='19px'
                     icon={ <CgTrash /> }
                   />
-                  <DividerVertical />
+                  <DividerVerticalControls />
                   <IconButtonPopoverItem
                     fontSize='18px'
                     onClick={ onClose }
