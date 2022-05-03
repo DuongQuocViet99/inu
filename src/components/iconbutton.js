@@ -1,19 +1,24 @@
-import { FiChevronRight } from "react-icons/fi";
+import { FiBox, FiChevronRight } from "react-icons/fi";
 import { IconButton } from "@chakra-ui/react";
 import { CgMenuMotion } from "react-icons/cg";
 import { HiPlus } from "react-icons/hi";
 
-export const IconButtonDrawer = props => (
+export const IconButtonUnstyled = props => (
   <IconButton
-    size='sm'
-    bg='white'
-    color='adobe.6'
-    fontSize='24px'
+    bg='none'
+    color='adobe.4'
     cursor='default'
+    _focus _active
+    _hover={{ color: 'adobe.5' }}
+    { ...props }
+  />
+);
+
+export const IconButtonDrawer = props => (
+  <IconButtonUnstyled
+    size='sm'
+    fontSize='24px'
     icon={ <CgMenuMotion /> }
-    _focus={{}}
-    _active={{}}
-    _hover={{ bg: 'adobe.0' }}
     { ...props }
   />
 );
@@ -25,8 +30,7 @@ export const IconButtonShadow = props => (
     color='adobe.6'
     fontSize='18px'
     cursor='default'
-    _focus={{}}
-    _active={{}}
+    _focus _active
     _hover={{ boxShadow: 'base' }}
     { ...props }
   />
@@ -41,16 +45,10 @@ export const IconButtonNew = props => (
 );
 
 export const IconButtonPopover = props => (
-  <IconButton
+  <IconButtonUnstyled
     size='sm'
-    bg='none'
     fontSize='xl'
-    color='adobe.6'
-    cursor='default'
     icon={ <FiChevronRight /> }
-    _focus={{}}
-    _hover={{}}
-    _active={{}}
     { ...props }
   />
 );
@@ -62,9 +60,22 @@ export const IconButtonPopoverItem = props => (
     rounded='sm'
     color='adobe.3'
     cursor='default'
-    _focus={{}}
+    _focus _active
     _hover={{ bg: 'blackAlpha.500', color: 'white' }}
-    _active={{}}
+    { ...props }
+  />
+);
+
+export const IconButtonLogo = props => (
+  <IconButton
+    size='sm'
+    rounded='sm'
+    bg='adobe.1'
+    fontSize='20px'
+    color='adobe.4'
+    cursor='default'
+    icon={ <FiBox /> }
+    _hover _active _focus
     { ...props }
   />
 );
