@@ -1,4 +1,5 @@
 import { Button } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 export function ButtonShadow( props ) {
   const { children, ...rest } = props;
@@ -25,19 +26,22 @@ export function ButtonShadow( props ) {
 }
 
 export function ButtonSpace( props ) {
-  const { children, ...rest } = props;
+  const { children, url, pathname, ...rest } = props;
 
   return (
     <>
       <Button
+        as={ Link }
+        to={ url }
         size='xs'
         bg='none'
+        rounded='sm'
         fontSize='12px'
-        color='adobe.3'
         cursor='default'
         fontFamily='Quicksand'
-        _focus _active
-        _hover={{ color: 'adobe.4' }} 
+        boxShadow={ pathname === url ? 'md' : 'none' }
+        color={ pathname === url ? 'adobe.6' : 'adobe.3' }
+        _focus _active _hover 
         { ...rest }
       >
         { children }
