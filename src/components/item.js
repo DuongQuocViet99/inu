@@ -17,7 +17,7 @@ export default function Item() {
           alignItems='center'
           _hover={{ boxShadow: 'base' }}
         >
-          <LinkOverlay as={ Link } to='/inu'>
+          <LinkOverlay as={ Link } to='/inu/todo'>
             <TextS>Inu</TextS>
           </LinkOverlay>
           <Spacer />
