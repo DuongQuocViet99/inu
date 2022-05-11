@@ -1,7 +1,7 @@
-import { FiBox, FiChevronRight } from "react-icons/fi";
 import { IconButton } from "@chakra-ui/react";
 import { CgMenuMotion } from "react-icons/cg";
 import { HiPlus } from "react-icons/hi";
+import { FiBox } from "react-icons/fi";
 
 export const IconButtonUnstyled = props => (
   <IconButton
@@ -44,15 +44,6 @@ export const IconButtonNew = props => (
   />
 );
 
-export const IconButtonPopover = props => (
-  <IconButtonUnstyled
-    size='sm'
-    fontSize='xl'
-    icon={ <FiChevronRight /> }
-    { ...props }
-  />
-);
-
 export const IconButtonPopoverItem = props => (
   <IconButton
     size='xs'
@@ -76,6 +67,14 @@ export const IconButtonLogo = props => (
     cursor='default'
     icon={ <FiBox /> }
     _hover _active _focus
+    { ...props }
+  />
+);
+
+export const IconButtonShowMore = props => (
+  <IconButtonUnstyled
+    size='none'
+    fontSize='xl'
     { ...props }
   />
 );
