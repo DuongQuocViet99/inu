@@ -78,3 +78,15 @@ export const IconButtonShowMore = props => (
     { ...props }
   />
 );
+
+export const IconButtonColor = props => (
+  <IconButton
+    size='xs'
+    color='white'
+    fontSize='xl'
+    rounded='full'
+    cursor='default' 
+    _hover _active _focus
+    { ...props }
+  />
+);
