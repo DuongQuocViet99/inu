@@ -1,48 +1,38 @@
 import { Box, Popover, PopoverTrigger, PopoverContent, PopoverBody, HStack } from '@chakra-ui/react';
-import { FiEdit2, FiX } from 'react-icons/fi';
-import { CgTrash } from 'react-icons/cg';
+import { FiX } from 'react-icons/fi';
 
-import { IconButtonPopover, IconButtonPopoverItem } from 'components/iconbutton';
-import { DividerVerticalControls } from 'components/divider';
+import { IconButtonPopoverItem, IconButtonShowMore } from 'components/iconbutton';
 
-export default function PopoverControls() {
+export default function PopoverControls({ children, whiteTheme }) {
   return (
     <>
-      <Popover placement='bottom-end'>
+      <Popover placement='bottom-end' closeOnBlur={ false }>
         {({ isOpen, onClose }) => (
           <>
             <PopoverTrigger>
               <Box>
-                <IconButtonPopover
-                  transform={ isOpen ? 'rotate(90deg)': 'rotate(0deg)' }
-                />
+                <IconButtonShowMore color={ isOpen ? 'adobe.5' : 'adobe.4' } />
               </Box>
             </PopoverTrigger>
             <PopoverContent
               w='auto'
-              bg='adobe.7'
               rounded='sm'
               border='none'
-              _focus={{}}
+              boxShadow='md'
+              bg={ whiteTheme ? 'white' : 'adobe.7' }
+              _focus
             >
               <PopoverBody p={ 1 }>
+
                 <HStack>
-                  <IconButtonPopoverItem
-                    fontSize='17px'
-                    icon={ <FiEdit2 /> }
-                  />
-                  <DividerVerticalControls />
-                  <IconButtonPopoverItem
-                    fontSize='19px'
-                    icon={ <CgTrash /> }
-                  />
-                  <DividerVerticalControls />
+                  { children }
                   <IconButtonPopoverItem
                     fontSize='18px'
-                    onClick={ onClose }
                     icon={ <FiX /> }
+                    onClick={ onClose }
                   />
                 </HStack>
+
               </PopoverBody>
             </PopoverContent>
           </>
