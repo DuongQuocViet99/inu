@@ -1,7 +1,11 @@
 import { Flex, GridItem, LinkBox, LinkOverlay, Spacer } from "@chakra-ui/react";
+import { FiEdit2 } from "react-icons/fi";
+import { CgTrash } from "react-icons/cg";
 import { Link } from "react-router-dom";
 
+import { IconButtonPopoverItem } from "components/iconbutton";
 import PopoverControls from "components/popover.controls";
+import { DividerVerticalTabs } from "components/divider";
 import TextS from "components/text";
 
 export default function Item() {
@@ -21,7 +25,18 @@ export default function Item() {
             <TextS>Inu</TextS>
           </LinkOverlay>
           <Spacer />
-          <PopoverControls />
+          <PopoverControls>
+            <IconButtonPopoverItem
+              fontSize='17px'
+              icon={ <FiEdit2 /> }
+            />
+            <DividerVerticalTabs />
+            <IconButtonPopoverItem
+              fontSize='19px'
+              icon={ <CgTrash /> }
+            />
+            <DividerVerticalTabs />
+          </PopoverControls>
         </GridItem>
       </LinkBox>
     </>
