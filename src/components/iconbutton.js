@@ -1,7 +1,7 @@
+import { FiBox, FiMoreVertical } from "react-icons/fi";
 import { IconButton } from "@chakra-ui/react";
 import { CgMenuMotion } from "react-icons/cg";
 import { HiPlus } from "react-icons/hi";
-import { FiBox } from "react-icons/fi";
 
 export const IconButtonUnstyled = props => (
   <IconButton
@@ -74,7 +74,8 @@ export const IconButtonLogo = props => (
 export const IconButtonShowMore = props => (
   <IconButtonUnstyled
     size='none'
-    fontSize='xl'
+    fontSize='19px'
+    icon={ <FiMoreVertical /> }
     { ...props }
   />
 );
