@@ -7,7 +7,7 @@ export const InputOutline = props => (
     fontWeight='600'
     borderColor='adobe.1'
     fontFamily='Quicksand'
-    _placeholder={{ color: 'adobe.5', fontSize: 'sm' }}
+    _placeholder={{ color: 'adobe.5' }}
     _hover={{ borderColor: 'adobe.2' }}
     _focus={{ borderColor: 'adobe.4' }}
     { ...props }
