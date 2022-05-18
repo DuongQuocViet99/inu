@@ -49,3 +49,22 @@ export function ButtonSpace( props ) {
     </>
   );
 }
+
+export function ButtonTab( props ) {
+  const { children, ...rest } = props;
+
+  return (
+    <>
+      <Button
+        size='sm'
+        bg='none'
+        cursor='default'
+        fontFamily='Quicksand'
+        _hover _focus _active
+        { ...rest }
+      >
+        { children }
+      </Button>
+    </>
+  );
+}
