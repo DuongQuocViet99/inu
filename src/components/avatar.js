@@ -16,7 +16,7 @@ export const AvatarActivate = ({ name }) => (
     size='sm'
     bg='adobe.5'
     color='white'
-    cursor='pointer'
+    cursor='default'
     fontWeight='700'
     fontFamily='Quicksand'
     _hover={{ bg: 'adobe.7' }}
