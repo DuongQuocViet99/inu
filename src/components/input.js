@@ -3,6 +3,7 @@ import { Input } from "@chakra-ui/react";
 export const InputOutline = props => (
   <Input
     rounded='sm'
+    fontSize='sm'
     color='adobe.7'
     fontWeight='600'
     borderColor='adobe.1'
