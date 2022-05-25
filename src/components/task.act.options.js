@@ -1,10 +1,10 @@
 import { Box, Stack } from "@chakra-ui/react";
 
 import FormControlS from "components/formcontrol";
+import { ButtonShadow } from "components/button";
 import { InputOutline } from "components/input";
 import UserOption from "components/user.option";
-import SwitchS from "components/Switch";
-import { ButtonShadow } from "./button";
+import SwitchS from "components/switch";
 
 export default function TaskOptions() {
   return(
