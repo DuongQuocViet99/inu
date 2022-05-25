@@ -6,7 +6,7 @@ import { InputOutline } from "components/input";
 import UserOption from "components/user.option";
 import SwitchS from "components/switch";
 
-export default function TaskOptions() {
+export default function TabOptions() {
   return(
     <>
       <Stack>

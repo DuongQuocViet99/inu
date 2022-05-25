@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import TextS from "components/text";
 
-export default function TaskWork() {
+export default function TabTask() {
   const [ complete, setComplete ] = useState( false );
 
   return (
