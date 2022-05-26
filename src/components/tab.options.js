@@ -1,6 +1,7 @@
 import { Box, Stack } from "@chakra-ui/react";
 
 import FormControlS from "components/formcontrol";
+import LevelOption from "components/level.option";
 import { ButtonShadow } from "components/button";
 import { InputOutline } from "components/input";
 import UserOption from "components/user.option";
@@ -25,6 +26,13 @@ export default function TabOptions() {
         </FormControlS>
 
         <FormControlS 
+          name='level'
+          formLabel='level'
+        >
+          <LevelOption />
+        </FormControlS>
+
+        <FormControlS 
           name='priority'
           formLabel='priority'
           formHelperText='Priority mission'
@@ -38,6 +46,7 @@ export default function TabOptions() {
         >
           <UserOption />
         </FormControlS>
+
         <Box textAlign='right'>
           <ButtonShadow w='min'>
             Save
