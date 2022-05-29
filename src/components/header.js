@@ -23,9 +23,10 @@ export default function Header() {
 
   return (
     <>
-      <Box 
+      <Box
         top={ 0 }
         bg='white'
+        zIndex={ 1111 }
         position='sticky'
       >
         <HStack
