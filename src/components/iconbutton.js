@@ -1,4 +1,4 @@
-import { FiBox, FiMoreVertical } from "react-icons/fi";
+import { FiMoreVertical } from "react-icons/fi";
 import { IconButton } from "@chakra-ui/react";
 import { CgMenuMotion } from "react-icons/cg";
 import { HiPlus } from "react-icons/hi";
@@ -53,20 +53,6 @@ export const IconButtonPopoverItem = props => (
     cursor='default'
     _focus _active
     _hover={{ bg: 'blackAlpha.500', color: 'white' }}
-    { ...props }
-  />
-);
-
-export const IconButtonLogo = props => (
-  <IconButton
-    size='sm'
-    rounded='sm'
-    bg='adobe.1'
-    fontSize='20px'
-    color='adobe.4'
-    cursor='default'
-    icon={ <FiBox /> }
-    _hover _active _focus
     { ...props }
   />
 );
