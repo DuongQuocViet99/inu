@@ -84,7 +84,7 @@ export const IconButtonSidebar = props => (
     fontSize='20px'
     cursor='default'
     _active _focus
-    _hover={{ color: 'adobe.8' }} 
+    _hover={{ color: 'adobe.10' }} 
     { ...props }
   />
 );

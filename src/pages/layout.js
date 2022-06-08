@@ -33,8 +33,8 @@ export default function Layout() {
                     as={ Link }
                     to={ i.url }
                     icon={ <i.icon /> }
-                    bg={ i.url !== '/settings' ? '#F2EDE4' : 'none' }
-                    color={ i.url !== '/settings' ? 'adobe.8' : '#D9D9D9' }
+                    bg={ i.url !== '/settings' ? 'adobe.9' : 'none' }
+                    color={ i.url !== '/settings' ? 'adobe.10' : 'adobe.8' }
                   />
                 }
               />
