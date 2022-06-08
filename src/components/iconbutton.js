@@ -91,3 +91,14 @@ export const IconButtonColor = props => (
     { ...props }
   />
 );
+
+export const IconButtonSidebar = props => (
+  <IconButton
+    size='sm'
+    fontSize='20px'
+    cursor='default'
+    _active _focus
+    _hover={{ color: 'adobe.8' }} 
+    { ...props }
+  />
+);
