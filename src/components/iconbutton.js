@@ -1,7 +1,6 @@
 import { FiMoreVertical } from "react-icons/fi";
 import { IconButton } from "@chakra-ui/react";
 import { CgMenuMotion } from "react-icons/cg";
-import { HiPlus } from "react-icons/hi";
 
 export const IconButtonUnstyled = props => (
   <IconButton
@@ -32,14 +31,6 @@ export const IconButtonShadow = props => (
     cursor='default'
     _focus _active
     _hover={{ boxShadow: 'base' }}
-    { ...props }
-  />
-);
-
-export const IconButtonNew = props => (
-  <IconButtonShadow
-    size='sm'
-    icon={ <HiPlus /> }
     { ...props }
   />
 );
