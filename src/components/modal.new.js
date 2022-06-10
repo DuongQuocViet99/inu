@@ -1,6 +1,5 @@
 import * as C from '@chakra-ui/react';
 
-import { IconButtonNew } from "components/iconbutton";
 import { ButtonShadow } from 'components/button';
 import { InputOutline } from 'components/input';
 
@@ -9,7 +8,9 @@ export default function New() {
 
   return (
     <>
-      <IconButtonNew onClick={ onOpen } />
+      <ButtonShadow onClick={ onOpen }>
+        New project
+      </ButtonShadow>
 
       <C.Modal
         size='xl'
