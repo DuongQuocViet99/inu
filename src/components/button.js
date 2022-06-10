@@ -8,15 +8,15 @@ export function ButtonShadow( props ) {
     <>
       <Button
         size='sm'
-        bg='white'
+        bg='none'
         rounded='xs'
         fontSize='md'
-        color='adobe.7'
+        color='adobe.11'
         cursor='default'
         fontFamily='Quicksand'
-        border='2px solid #595959'
+        border='2px solid #BFB9B8'
         _focus _active
-        _hover={{ boxShadow: '4px 4px #595959' }}
+        _hover={{ boxShadow: '4px 4px #BFB9B8' }}
         { ...rest }
       >
         { children }
