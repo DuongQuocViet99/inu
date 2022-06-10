@@ -1,23 +1,22 @@
 import { FiMoreVertical } from "react-icons/fi";
+import { CgMenuLeftAlt } from "react-icons/cg";
 import { IconButton } from "@chakra-ui/react";
-import { CgMenuMotion } from "react-icons/cg";
 
 export const IconButtonUnstyled = props => (
   <IconButton
     bg='none'
-    color='adobe.4'
     cursor='default'
-    _focus _active
-    _hover={{ color: 'adobe.5' }}
+    _hover _focus _active
     { ...props }
   />
 );
 
 export const IconButtonDrawer = props => (
   <IconButtonUnstyled
-    size='sm'
     fontSize='24px'
-    icon={ <CgMenuMotion /> }
+    color='adobe.10'
+    icon={ <CgMenuLeftAlt /> }
+    _hover={{ color: 'adobe.11' }}
     { ...props }
   />
 );
