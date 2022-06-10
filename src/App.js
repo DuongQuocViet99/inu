@@ -1,6 +1,7 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { Route, Routes } from 'react-router-dom';
 
+import Settings from 'pages/settings';
 import theme from 'components/theme';
 import Layout from 'pages/layout';
 import Home from 'pages/home';
@@ -16,6 +17,7 @@ export default function App() {
         <Routes>
           <Route path='/' element={ <Layout /> }>
             <Route index element={ <Home /> } />
+            <Route path='/settings' element={ <Settings /> } />
             <Route path=':projectID/todo' element={ <Todo /> }/>
             <Route path=':projectID/mess' element={ <Mess /> }/>
             <Route path=':projectID/team' element={ <Team /> }/>
