@@ -25,7 +25,7 @@ export const IconButtonShadow = props => (
   <IconButton
     bg='white'
     boxShadow='md'
-    color='adobe.6'
+    color='adobe.11'
     fontSize='18px'
     cursor='default'
     _focus _active
@@ -39,10 +39,10 @@ export const IconButtonPopoverItem = props => (
     size='xs'
     bg='none'
     rounded='sm'
-    color='adobe.3'
+    color='white'
     cursor='default'
     _focus _active
-    _hover={{ bg: 'blackAlpha.500', color: 'white' }}
+    _hover={{ bg: 'adobe.9', color: 'adobe.11' }}
     { ...props }
   />
 );
@@ -51,6 +51,7 @@ export const IconButtonShowMore = props => (
   <IconButtonUnstyled
     size='none'
     fontSize='19px'
+    color='adobe.11'
     icon={ <FiMoreVertical /> }
     { ...props }
   />
@@ -75,6 +76,20 @@ export const IconButtonSidebar = props => (
     cursor='default'
     _active _focus
     _hover={{ color: 'adobe.10' }} 
+    { ...props }
+  />
+);
+
+export const IconButtonControl = props => (
+  <IconButton
+    size='sm'
+    bg='none'
+    rounded='full'
+    color='adobe.10'
+    cursor='default'
+    _focus 
+    _hover={{ bg: 'adobe.9' }} 
+    _active={{ color: 'adobe.11' }}
     { ...props }
   />
 );
