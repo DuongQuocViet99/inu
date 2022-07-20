@@ -1,71 +1,73 @@
-import { FiMessageCircle, FiUsers } from "react-icons/fi";
-import { CgChevronLeft, CgToday } from "react-icons/cg";
-import { Box, HStack, Spacer } from "@chakra-ui/react";
+import { FiBox, FiMessageCircle, FiUsers } from "react-icons/fi";
+import { Box, HStack, Spacer, Square } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
-
-import { DividerVerticalTabs } from "components/divider";
-import { IconButtonLogo } from "components/iconbutton";
-import { ButtonSpace } from "components/button";
-import HeadingS from "components/heading";
-import DrawerS from "components/drawer";
-import New from "components/modal.new";
-import Map from "render/map";
+import { CgToday } from "react-icons/cg";
+import { DividerVerticalTabs, ButtonNavbar, HeadingC, New, Map } from "components/common";
 
 const tabs = [
-  { title: 'Back', icon: CgChevronLeft, fontSize: '18px', url: '/' },
   { title: 'To do', icon: CgToday, fontSize: '16px', url: '/inu/todo' },
   { title: 'Mess', icon: FiMessageCircle, fontSize: '16px', url: '/inu/mess' },
   { title: 'Team', icon: FiUsers, fontSize: '16px', url: '/inu/team' }
 ];
 
-export default function Header() {
+export const Header = () => {
   const { pathname } = useLocation();
-
+  const condition = ['/', '/settings'].every( e => pathname !== e ); 
+  
   return (
     <>
-      <Box
+      <Box 
         top={ 0 }
         bg='white'
         zIndex={ 1111 }
         position='sticky'
+        roundedBottomStart='xl'
+        boxShadow={ condition && 'base' }
       >
-        <HStack
-          p={ 2 }
-          borderBottom='1px'
-          borderColor='adobe.2'
-        >
-          <DrawerS />
-          { pathname !== '/' &&
-            <>
-              <IconButtonLogo />
-              <HeadingS size='md'>
+        { condition ?
+          <>
+            <HStack p={ 5 }>
+              <Square 
+                p={ 2 }
+                rounded='md'
+                bg='adobe.9' 
+                fontSize='xl'
+                color='adobe.11'
+              >
+                <FiBox />
+              </Square>
+              <HeadingC size='md'>
                 Inu
-              </HeadingS>
-            </> 
-          }
-          <Spacer />
-          <New />
-        </HStack>
-        { pathname !== '/' &&
-          <HStack 
-            p={ 1 }
-            borderBottom='1px'
-            borderColor='adobe.2'
-          >
-            <Map data={ tabs } render={( t, k ) =>
-              <HStack key={ k }>
-                <ButtonSpace
-                  url={ t.url }
-                  pathname={ pathname }
-                  leftIcon={ <t.icon fontSize={ t.fontSize } /> }
-                >
-                  { t.title }
-                </ButtonSpace>
-                {
-                  k === 3 ? <></> : <DividerVerticalTabs /> 
-                }
-              </HStack>
-            }/>
+              </HeadingC>
+              
+              <Spacer />
+              <New />
+            </HStack>
+      
+            <HStack
+              p={ 2 }
+              pl={ 6 }
+            >
+              <Map data={ tabs } render={( t, k ) =>
+                <HStack key={ k }>
+                  <ButtonNavbar
+                    url={ t.url }
+                    pathname={ pathname }
+                    leftIcon={ <t.icon fontSize={ t.fontSize } /> }
+                  >
+                    { t.title }
+                  </ButtonNavbar>
+                  {
+                    k === 2 ? <></> : <DividerVerticalTabs /> 
+                  }
+                </HStack>
+              }/>
+            </HStack>
+          </>
+          :
+          <HStack p={ 6 }>
+            <Spacer />
+            <New />
           </HStack>
         }
       </Box>

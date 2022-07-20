@@ -1,30 +1,15 @@
 import { Box, Collapse, Grid, GridItem, HStack, Spacer, useDisclosure } from "@chakra-ui/react";
 import { FiChevronRight } from "react-icons/fi";
+import { IconButtonShowMore, ProcessControls, BadgeC, TaskBar } from "components/common";
 
-import { IconButtonPopoverItem, IconButtonShowMore } from "components/iconbutton";
-import PopoverControls from "components/popover.controls";
-import { DividerVerticalTabs } from "components/divider";
-import ProcessAct from "components/process.act";
-import { CgTrash } from "react-icons/cg";
-import BadgeS from "components/badge";
-import Task from "components/task";
-
-export default function Process({ children, color }) {
+export const Process = ({ children, color }) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
     <>
       <HStack>
         <Box>
-          <PopoverControls whiteTheme>
-            <ProcessAct />
-            <DividerVerticalTabs />
-            <IconButtonPopoverItem
-              fontSize='19px'
-              icon={ <CgTrash /> }
-            />
-            <DividerVerticalTabs />
-          </PopoverControls>
+          <ProcessControls />
         </Box>
         <HStack
           p={ 2 }
@@ -33,9 +18,9 @@ export default function Process({ children, color }) {
           boxShadow='base'
           onClick={ onToggle }
         >
-          <BadgeS bg={ color }>
+          <BadgeC bg={ color }>
             { children }
-          </BadgeS>
+          </BadgeC>
           <Spacer />
           <IconButtonShowMore
             icon={ <FiChevronRight /> } 
@@ -61,8 +46,8 @@ export default function Process({ children, color }) {
           <GridItem>DUE DATE</GridItem>
           <GridItem>PRIORITY</GridItem>
 
-          <Task />
-          <Task />
+          <TaskBar />
+          <TaskBar />
           
         </Grid>
       </Collapse>

@@ -1,15 +1,15 @@
-import { Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, useDisclosure, } from '@chakra-ui/react';
+import { DrawerOverlay, DrawerContent, useDisclosure, Stack, Drawer, DrawerHeader } from "@chakra-ui/react";
+import { IconButtonDrawer, ButtonAuth } from 'components/common';
 
-import { IconButtonDrawer } from 'components/iconbutton';
-
-export default function DrawerS() {
+export const DrawerC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
-      <IconButtonDrawer 
-        onClick={ onOpen }
-      />
+      {/* Trigger button */}
+      <IconButtonDrawer onClick={ onOpen } />
+      
+      {/* Dialog */}
       <Drawer
         placement='left'
         isOpen={ isOpen }
@@ -17,15 +17,18 @@ export default function DrawerS() {
       >
         <DrawerOverlay bg='rgba(89, 89, 89, 0.4)' />
         <DrawerContent
-          h='xs'
+          h='min'
           m={ 2 }
           mt={ 14 }
           maxW='3xs'
           rounded='md'
         >
-          <DrawerHeader></DrawerHeader>
-          <DrawerBody></DrawerBody>
-          <DrawerFooter></DrawerFooter>
+          <DrawerHeader p={ 4 }>
+            <Stack>
+              <ButtonAuth>Sign in</ButtonAuth>
+              <ButtonAuth>Sign up</ButtonAuth>
+            </Stack>
+          </DrawerHeader>
         </DrawerContent>
       </Drawer>    
     </>

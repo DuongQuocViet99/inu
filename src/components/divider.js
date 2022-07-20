@@ -1,26 +1,25 @@
 import { Divider } from "@chakra-ui/react";
 
-export const DividerHorizontal = props => (
+export const DividerHorizontal = props =>
   <Divider
-    borderColor='adobe.3'
+    border='2px'
+    rounded='full'
+    borderColor='adobe.11'
     { ...props }
   />
-);
 
-export const DividerVerticalControls = props => (
+export const DividerVerticalControls = props =>
   <Divider
     h='12px'
     orientation='vertical'
-    borderColor='whiteAlpha.400'
+    borderColor='whiteAlpha.500'
     { ...props }
   />
-);
 
-export const DividerVerticalTabs = props => (
+export const DividerVerticalTabs = props =>
   <Divider
     h='12px'
-    borderColor='adobe.3'
     orientation='vertical'
+    borderColor='adobe.10'
     { ...props }
   />
-);

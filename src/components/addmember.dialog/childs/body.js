@@ -3,7 +3,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { 
-  AvatarActivate, InputOutline, FilterToMap, TooltipC, MemberTag, TextS, Map 
+  AvatarActivate, InputOutline, FilterToMap, TooltipC, MemberTagName, TextC, Map 
 } from "components/common";
 
 const listMemberApp = [
@@ -26,7 +26,7 @@ export const Body = () => {
               key={ k } 
               label={ i }
             > 
-              <MemberTag>
+              <MemberTagName>
                 <TagLabel>{ i }</TagLabel>
                 <TagCloseButton 
                   _focus 
@@ -35,7 +35,7 @@ export const Body = () => {
                       ...select.slice( k + 1 ) ]
                   )}
                 />
-              </MemberTag>
+              </MemberTagName>
             </TooltipC>
           }/>
         </SimpleGrid>
@@ -58,13 +58,13 @@ export const Body = () => {
               onClick={() => select.every( e => !e.includes( i )) && setSelect([ ...select, i ])}
             >
               <AvatarActivate name={ i } />
-              <TextS>{ i }</TextS>
+              <TextC>{ i }</TextC>
             </HStack>
           }
         />
         { 
           listMemberApp.every( i => !i.includes( name ) && name !== null ) && 
-          <TextS p={ 2 }>not found</TextS> 
+          <TextC p={ 2 }>not found</TextC> 
         }
       </Box>
     </ModalBody>

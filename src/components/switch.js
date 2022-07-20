@@ -1,6 +1,6 @@
 import { Box, Circle, useBoolean } from "@chakra-ui/react";
 
-export default function SwitchS() {
+export const SwitchC = () => {
   const [ bool, setBool ] = useBoolean( false );
   
   return (
@@ -10,7 +10,7 @@ export default function SwitchS() {
         p={ 0.5 } 
         rounded='full' 
         onClick={ setBool.toggle }
-        bg={ bool ? 'adobe.6' : 'adobe.2' } 
+        bg={ bool ? 'adobe.10' : 'adobe.8' } 
       >
         <Circle 
           transition='all 0.2s ease-in-out'

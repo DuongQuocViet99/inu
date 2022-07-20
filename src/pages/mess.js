@@ -1,10 +1,7 @@
 import { Box, HStack, useBoolean } from "@chakra-ui/react";
 import { FiPaperclip, FiSend } from "react-icons/fi";
-
-import { IconButtonShadow } from "components/iconbutton";
-import { InputMess } from "components/input";
 import { useEffect, useRef } from "react";
-import MessIb from "components/mess.ib";
+import { IconButtonShadow, InputMess, MessIb } from "components/common";
 
 export default function Mess() {
   const [ pin, setPin ] = useBoolean();
@@ -19,28 +16,30 @@ export default function Mess() {
   return (
     <>
       <Box
-        p={ 4 }
+        p={ 6 }
         pb={ 24 }
         ref={ boxRef }
       >
         <MessIb me>hôm nay trời đẹp</MessIb>
         <MessIb>dung vay</MessIb>
+        
+        <HStack
+          w='full'
+          py={ 4 }
+          px={ 20 }
+          right={ 0 }
+          bottom={ 0 }
+          position='fixed'
+        >
+          <IconButtonShadow
+            icon={ <FiPaperclip /> } 
+            onClick={ setPin.toggle }
+            color={ pin ? 'adobe.11' : 'adobe.3' }
+          />
+          <InputMess />
+          <IconButtonShadow icon={ <FiSend /> } />
+        </HStack>
       </Box>
-      <HStack
-        p={ 4 }
-        w='full'
-        bg='white'
-        bottom={ 0 }
-        position='fixed'
-      >
-        <IconButtonShadow
-          icon={ <FiPaperclip /> } 
-          onClick={ setPin.toggle }
-          color={ pin ? 'adobe.7' : 'adobe.6' }
-        />
-        <InputMess />
-        <IconButtonShadow icon={ <FiSend /> } />
-      </HStack>
     </>
   );
 }

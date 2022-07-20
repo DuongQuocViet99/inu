@@ -1,13 +1,13 @@
-import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, useDisclosure, Stack, HStack } from "@chakra-ui/react";
+import { 
+  Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter,
+  ModalBody, ModalCloseButton, useDisclosure, Stack, HStack 
+} from "@chakra-ui/react";
 import { FiEdit2 } from "react-icons/fi";
 
+import { ButtonShadow, InputOutline, ColorList, TextC } from "components/common";
 import { IconButtonPopoverItem } from "components/iconbutton";
-import { ButtonShadow } from "components/button";
-import { InputOutline } from "components/input";
-import ColorList from "components/colorlist";
-import TextS from "components/text";
 
-export default function ProcessAct() {
+export const ProcessAct = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -28,8 +28,9 @@ export default function ProcessAct() {
         <ModalOverlay bg='rgba(89, 89, 89, 0.4)' />
         <ModalContent rounded='sm'>
           <ModalCloseButton 
-            _focus
-            color='adobe.5'
+            _focus _active
+            color='adobe.10'
+            _hover={{ bg: 'adobe.9' }}
           />
           <ModalHeader
             color='adobe.7'
@@ -39,11 +40,11 @@ export default function ProcessAct() {
           <ModalBody p={ 6 }>
             <Stack spacing={ 4 }>
               <HStack spacing={ 4 }>
-                <TextS>Title</TextS>
+                <TextC>Title</TextC>
                 <InputOutline defaultValue='Open' />
               </HStack>
               <HStack>
-                <TextS flex={ 1 }>Color</TextS>
+                <TextC flex={ 1 }>Color</TextC>
                 <ColorList />
               </HStack>
             </Stack>

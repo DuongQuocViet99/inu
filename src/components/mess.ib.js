@@ -1,23 +1,18 @@
 import { Box, HStack, Spacer } from "@chakra-ui/react";
 
-export default function MessIb({ me, children }) {
-  return (
-    <>
-      <HStack>
-        { me && <Spacer /> }
-        <Box
-          p={ 3 }
-          maxW='md'
-          rounded='sm'
-          color='white'
-          fontWeight='500'
-          fontFamily='Quicksand'
-          bg={ me ? 'adobe.7' : 'adobe.6' } 
-        >
-          { children }
-        </Box>
-        { !me && <Spacer /> }
-      </HStack>
-    </>
-  );
-}
+export const MessIb = ({ me, children }) =>
+  <HStack>
+    { me && <Spacer /> }
+    <Box
+      p={ 2 }
+      maxW='md'
+      rounded='sm'
+      color='white'
+      fontWeight='500'
+      fontFamily='Quicksand'
+      bg={ me ? 'adobe.7' : 'adobe.11' } 
+    >
+      { children }
+    </Box>
+    { !me && <Spacer /> }
+  </HStack>

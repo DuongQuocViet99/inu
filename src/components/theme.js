@@ -22,7 +22,8 @@ const theme = extendTheme({
       2: '#FFB4A2',
       3: '#E5989B',
       4: '#B5838D',
-      5: '#6D6875'
+      5: '#6D6875',
+      6: '#89b0ae'
     }
   },
   components: {

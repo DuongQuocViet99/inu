@@ -1,10 +1,8 @@
-import { Circle, HStack, SlideFade, useDisclosure } from "@chakra-ui/react";
+import { Circle, CloseButton, HStack, SlideFade, useDisclosure } from "@chakra-ui/react";
 import { HiPlus } from "react-icons/hi";
+import { AvatarActivate } from "components/common";
 
-import { AvatarActivate } from "components/avatar";
-import CloseBtn from "components/closebutton";
-
-export default function UserOption() {
+export const MemberSelect = () => {
   const { isOpen, onToggle, onClose } = useDisclosure();
 
   return (
@@ -30,7 +28,13 @@ export default function UserOption() {
           >
             <AvatarActivate name='na ru to' />
             <AvatarActivate name='sa su ke' />
-            <CloseBtn onClick={ onClose } />
+            <CloseButton 
+              cursor='default'
+              color='adobe.10'
+              onClick={ onClose } 
+              _focus _active
+              _hover={{ color: 'adobe.11' }} 
+            />
           </HStack>
         </SlideFade>
       </HStack>

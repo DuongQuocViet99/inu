@@ -1,13 +1,12 @@
-import { Box, Accordion, AccordionItem, AccordionButton, AccordionPanel, Checkbox, HStack, CheckboxGroup } from '@chakra-ui/react'
-import { FiChevronRight } from 'react-icons/fi';
-import React from 'react';
+import { 
+  Box, Accordion, AccordionItem, AccordionButton, AccordionPanel, Checkbox, HStack, CheckboxGroup 
+} from "@chakra-ui/react";
+import { FiChevronRight } from "react-icons/fi";
+import { useState } from "react";
+import { IconButtonShowMore, TextC, Map } from "components/common";
 
-import { IconButtonShowMore } from 'components/iconbutton';
-import TextS from 'components/text';
-import Map from 'render/map';
-
-export default function LevelOption() {
-  const [ value, setValue ] = React.useState('C')
+export const LevelOption = () => {
+  const [ value, setValue ] = useState('C');
 
   return (
     <>
@@ -20,9 +19,9 @@ export default function LevelOption() {
           {({ isExpanded }) => (
             <>
               <AccordionButton as={ Box }>
-                <TextS flex='1'>
+                <TextC flex='1'>
                   { value }
-                </TextS>
+                </TextC>
                 <IconButtonShowMore
                   icon={ <FiChevronRight /> }
                   transform={ isExpanded && 'rotate(90deg)' }
@@ -41,7 +40,7 @@ export default function LevelOption() {
                             e.target.checked && setValue( i )
                           }}
                         />
-                        <TextS>{ i }</TextS>
+                        <TextC>{ i }</TextC>
                       </HStack>
                     }/>
                   </HStack>

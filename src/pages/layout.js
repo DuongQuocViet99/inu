@@ -1,11 +1,7 @@
+import { Link, Outlet, useLocation } from "react-router-dom";
 import { Grid, GridItem, VStack } from "@chakra-ui/react";
 import { FiBox, FiSettings } from "react-icons/fi";
-import { Link, Outlet } from "react-router-dom";
-
-import { IconButtonSidebar } from "components/iconbutton";
-import DrawerS from "components/drawer";
-import Header from "components/header";
-import Map from "render/map";
+import { IconButtonSidebar, DrawerC, Header, Map } from "components/common";
 
 const sidebarItem = [
   { icon: FiBox, url: '/' },
@@ -13,6 +9,8 @@ const sidebarItem = [
 ];
 
 export default function Layout() {
+  const { pathname } = useLocation();
+
   return (
     <>
       <Grid templateColumns='repeat(20, 1fr)'>
@@ -23,8 +21,8 @@ export default function Layout() {
             spacing={ 12 }
             position='sticky'
           >
-            <DrawerS />
-            <VStack spacing={ 5 }>
+            <DrawerC />
+            <VStack spacing={ 6 }>
               <Map 
                 data={ sidebarItem }
                 render={( i, k ) => 
@@ -33,8 +31,8 @@ export default function Layout() {
                     as={ Link }
                     to={ i.url }
                     icon={ <i.icon /> }
-                    bg={ i.url !== '/settings' ? 'adobe.9' : 'none' }
-                    color={ i.url !== '/settings' ? 'adobe.10' : 'adobe.8' }
+                    bg={ i.url === pathname ? 'adobe.9' : 'none' }
+                    color={ i.url === pathname ? 'adobe.10' : 'adobe.8' }
                   />
                 }
               />
